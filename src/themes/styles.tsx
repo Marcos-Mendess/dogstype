@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyles = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Spectral:wght@700&display=swap");
 
 * {
@@ -104,3 +107,5 @@ li {
 .VictoryContainer {
   height: initial !important;
 }
+
+`;
