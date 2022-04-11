@@ -15,9 +15,13 @@ interface IPhotoComments {
 }
 
 const PhotoComments = (props: IPhotoComments) => {
-  const [comments, setComments] = useState(props.comments);
+  const [comments, setComments] = useState<Comment[]>([]);
   const commentsSection = useRef<HTMLUListElement>(null);
   const { login } = useContext(UserContext);
+
+  useEffect(() => {
+    setComments(props.comments);
+  }, [props.comments]);
 
   useEffect(() => {
     if (commentsSection.current) {
@@ -25,8 +29,9 @@ const PhotoComments = (props: IPhotoComments) => {
     }
   }, [comments]);
 
-  const HandleAddComment = (comment: Comment) => {
-    setComments((comments) => [...comments, comment]);
+  const HandleAddComment = (newComment: Comment) => {
+    console.log(comments);
+    setComments((comments) => [...comments, newComment]);
   };
 
   return (
@@ -35,7 +40,7 @@ const PhotoComments = (props: IPhotoComments) => {
         ref={commentsSection}
         className={`${styles.comments} ${props.single ? styles.single : ''}`}
       >
-        {props.comments?.map((comment) => (
+        {comments?.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author}: </b>
             <span>{comment.comment_content}</span>

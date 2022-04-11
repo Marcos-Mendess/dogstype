@@ -94,7 +94,11 @@ export function PHOTO_GET(id: string | number) {
   };
 }
 
-export function COMMENT_POST(id: number | string, body: string) {
+type singleComment = {
+  comment: string;
+};
+
+export function COMMENT_POST(id: number | string, body: singleComment) {
   return {
     url: `${API_URL}/api/comment/${id}`,
     options: {

@@ -10,6 +10,7 @@ export interface Comment {
   comment_post_ID?: string;
   comment_type?: string;
   user_id?: string;
+  comment?: string;
 }
 
 export interface PhotoPost {

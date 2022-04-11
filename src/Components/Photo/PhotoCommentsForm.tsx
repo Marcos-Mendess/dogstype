@@ -23,8 +23,18 @@ const PhotoCommentsForm = ({
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    const { url, options } = COMMENT_POST(id, comment);
+
+    const singleComment = {
+      comment: comment,
+    };
+    console.log(singleComment);
+    console.log(comment);
+
+    const { url, options } = COMMENT_POST(id, singleComment);
+
     const { response, json } = await request(url, options);
+    console.log(json);
+
     if (response.ok) {
       setComment('');
       HandleAddComment(json as Comment);
