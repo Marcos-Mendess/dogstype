@@ -13,6 +13,7 @@ const LoginPasswordLost = () => {
     error: loginError,
   } = useForm(null);
   const { data, loading, error, request } = useFetch();
+  console.log(data);
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -22,30 +23,32 @@ const LoginPasswordLost = () => {
         url: window.location.href.replace('perdeu', 'resetar'),
       });
       const { json } = await request(url, options);
+      console.log(json);
+      if (json) {
+        window.alert(json);
+      }
+      return json;
     }
+    return;
   }
 
   return (
     <section className="animeLeft">
       <Head title="Perdeu a senha" />
       <h1 className="title">Perdeu a senha?</h1>
-      {data ? (
-        <p style={{ color: '#4c1' }}>{data}</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <Input
-            label="Email / Usuário"
-            type="text"
-            name="login"
-            onChange={OnChangeLogin}
-          />
-          {loading ? (
-            <Button>Enviando ...</Button>
-          ) : (
-            <Button>Enviar Email</Button>
-          )}
-        </form>
-      )}
+      <form onSubmit={handleSubmit}>
+        <Input
+          label="Email / Usuário"
+          type="text"
+          name="login"
+          onChange={OnChangeLogin}
+        />
+        {loading ? (
+          <Button>Enviando ...</Button>
+        ) : (
+          <Button>Enviar Email</Button>
+        )}
+      </form>
 
       <Error error={error} />
     </section>
