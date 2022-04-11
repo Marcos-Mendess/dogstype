@@ -2,10 +2,10 @@
 <img src='./logo_readme.png'>
 
 <div>
-    <img src="https://img.shields.io/github/repo-size/Marcos-Mendess/dogs">
-    <img src="https://img.shields.io/github/last-commit/Marcos-Mendess/dogs">
-    <img src="https://img.shields.io/github/languages/count/Marcos-Mendess/dogs">
-    <img src="https://img.shields.io/github/languages/top/Marcos-Mendess/dogs">
+    <img src="https://img.shields.io/github/repo-size/Marcos-Mendess/dogstype">
+    <img src="https://img.shields.io/github/last-commit/Marcos-Mendess/dogstype">
+    <img src="https://img.shields.io/github/languages/count/Marcos-Mendess/dogstype">
+    <img src="https://img.shields.io/github/languages/top/Marcos-Mendess/dogstype">
 </div>
 
 </div>
