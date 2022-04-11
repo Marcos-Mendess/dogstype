@@ -2,10 +2,10 @@
 <img src='./logo_readme.png'>
 
 <div>
-    <img src="https://img.shields.io/github/repo-size/Marcos-Mendess/dogs">
-    <img src="https://img.shields.io/github/last-commit/Marcos-Mendess/dogs">
-    <img src="https://img.shields.io/github/languages/count/Marcos-Mendess/dogs">
-    <img src="https://img.shields.io/github/languages/top/Marcos-Mendess/dogs">
+    <img src="https://img.shields.io/github/repo-size/Marcos-Mendess/dogstype">
+    <img src="https://img.shields.io/github/last-commit/Marcos-Mendess/dogstype">
+    <img src="https://img.shields.io/github/languages/count/Marcos-Mendess/dogstype">
+    <img src="https://img.shields.io/github/languages/top/Marcos-Mendess/dogstype">
 </div>
 
 </div>
@@ -20,6 +20,7 @@
 
 <h2>🚀 Tecnologias</h2>
 <ul>
+    <li><a href="https://www.typescriptlang.org/docs/handbook/intro.html" target="_blank">Typescript</a></li>
     <li><a href="https://create-react-app.dev/" target="_blank">React</a></li>
     <li><a href="https://reactrouter.com/" target="_blank">React Router</a></li>
     <li><a href="https://github.com/FormidableLabs/victory" target="_blank">Victory</a></li>
