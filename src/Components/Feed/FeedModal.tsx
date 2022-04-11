@@ -9,7 +9,6 @@ import { IFeedPhotosItem } from './FeedPhotosItem';
 
 const FeedModal = ({ photo, setModalPhoto }: IFeedPhotosItem) => {
   const { data, error, loading, request } = FeedModalPhotosFetch();
-  console.log(data);
 
   useEffect(() => {
     const { url, options } = PHOTO_GET(photo.id!);

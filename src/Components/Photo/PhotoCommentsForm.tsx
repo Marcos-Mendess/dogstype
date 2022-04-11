@@ -25,7 +25,6 @@ const PhotoCommentsForm = ({
     event.preventDefault();
     const { url, options } = COMMENT_POST(id, comment);
     const { response, json } = await request(url, options);
-    console.log(json);
     if (response.ok) {
       setComment('');
       HandleAddComment(json as Comment);

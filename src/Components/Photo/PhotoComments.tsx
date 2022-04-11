@@ -18,6 +18,7 @@ const PhotoComments = (props: IPhotoComments) => {
   const [comments, setComments] = useState(props.comments);
   const commentsSection = useRef<HTMLUListElement>(null);
   const { login } = useContext(UserContext);
+
   useEffect(() => {
     if (commentsSection.current) {
       commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
@@ -34,7 +35,7 @@ const PhotoComments = (props: IPhotoComments) => {
         ref={commentsSection}
         className={`${styles.comments} ${props.single ? styles.single : ''}`}
       >
-        {comments?.map((comment) => (
+        {props.comments?.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author}: </b>
             <span>{comment.comment_content}</span>

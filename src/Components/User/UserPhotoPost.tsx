@@ -21,8 +21,6 @@ const UserPhotoPost = () => {
   const [img, setImg] = useState({} as Iimg);
   const { data, error, loading, request } = UserPhotoPostFetch();
   const navigate = useNavigate();
-  console.log(data);
-  console.log(typeof data);
 
   useEffect(() => {
     if (data?.meta_input) {

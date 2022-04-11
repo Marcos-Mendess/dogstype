@@ -10,7 +10,6 @@ import FeedModalPhotosFetch from '../../Hooks/FeedModalPhotosFetch';
 function Photo() {
   const { id } = useParams();
   const { data, loading, error, request } = FeedModalPhotosFetch();
-  console.log(data);
 
   useEffect(() => {
     const { url, options } = PHOTO_GET(id!);

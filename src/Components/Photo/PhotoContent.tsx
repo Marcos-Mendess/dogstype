@@ -14,7 +14,6 @@ interface PhotoContentProps {
 function PhotoContent({ data, single }: PhotoContentProps) {
   const user = useContext(UserContext);
   const { photo, comments } = data;
-  console.log(data);
 
   return (
     <div className={`${styles.photo} ${single ? styles.single : ''}`}>

@@ -10,10 +10,12 @@ import Input from '../Input/Input';
 import useFetch from '../../Hooks/useFetch';
 
 const LoginCreate = () => {
-  const username = useForm(null);
-  const email = useForm('email');
-  const password = useForm(null);
   const navigate = useNavigate();
+
+  const { onChange: OnChangeUsername, value: usernameValue } = useForm(null);
+  const { onChange: OnChangeEmail, value: emailValue } = useForm('email');
+
+  const { onChange: OnChangePassword, value: passwordValue } = useForm(null);
 
   const { userLogin } = useContext(UserContext);
   const { loading, error, request } = useFetch();
@@ -21,13 +23,13 @@ const LoginCreate = () => {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     const { url, options } = USER_POST({
-      username: username.value,
-      email: email.value,
-      password: password.value,
+      username: usernameValue,
+      email: emailValue,
+      password: passwordValue,
     });
     const { response } = await request(url, options);
     if (response.ok) {
-      userLogin(username.value, password.value);
+      userLogin(usernameValue, passwordValue);
       navigate('/login');
     }
   }
@@ -36,13 +38,26 @@ const LoginCreate = () => {
       <Head title="Crie sua conta" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" autoComplete="on" />
-        <Input label="Email" type="email" name="email" autoComplete="on" />
+        <Input
+          label="Usuário"
+          type="text"
+          name="username"
+          autoComplete="on"
+          onChange={OnChangeUsername}
+        />
+        <Input
+          label="Email"
+          type="email"
+          name="email"
+          autoComplete="on"
+          onChange={OnChangeEmail}
+        />
         <Input
           label="Password"
           type="password"
           name="password"
           autoComplete="on"
+          onChange={OnChangePassword}
         />
 
         {loading ? (
